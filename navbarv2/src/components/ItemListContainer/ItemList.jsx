@@ -1,26 +1,29 @@
+import React from "react";
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "./ItemList.css";
 
 const ItemList = ({ items, isLoading }) => {
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <h2 className="loading">Cargando...</h2>;
   }
 
   return (
-    <div>
-      <h1>ItemList</h1>
-
-      <ul>
+    <div className="item-list-container">
+      <h1>Productos</h1>
+      <div className="item-list">
         {items.map((item) => (
-          <li key={item.id}>
+          <div className="item" key={item.id}>
             <Link to={`/item/${item.id}`}>
-              <h3>{item.name}</h3>
-              <p>${item.price}</p>
-              <p>{item.category}</p>
+              <div className="item-content">
+                <h3>{item.name}</h3>
+                <p>${item.price}</p>
+                <p>{item.category}</p>
+              </div>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

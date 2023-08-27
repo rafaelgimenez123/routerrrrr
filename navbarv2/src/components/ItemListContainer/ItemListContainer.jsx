@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../services.js";
 import ItemList from "../ItemListContainer/ItemList";
+import "./ItemList.css";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -9,8 +10,6 @@ const ItemListContainer = () => {
   const { categoryId } = useParams();
 
   useEffect(() => {
-    console.log("useEffect", categoryId);
-
     setIsLoading(true);
 
     getProducts(categoryId).then((response) => {

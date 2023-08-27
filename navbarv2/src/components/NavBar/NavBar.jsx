@@ -1,12 +1,15 @@
-import { Link, NavLink } from "react-router-dom";
-import "./NavBar.css"; 
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+
+import "../NavBar/NavBar.css";
+import CarWidget from '../CartWidget/CartWidget';
 
 const Navbar = () => {
   return (
     <div className="navbar-container">
       <nav className="nav">
         <h1 className="logo">
-          <Link to="/">MercadoCoder</Link>
+          <Link to="/">Samsung de la salada store</Link>
         </h1>
 
         <ul className="nav-list">
@@ -22,7 +25,9 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <div className="cart-widget">CartWidget</div>
+      <div className="cart-widget">
+        <CarWidget></CarWidget>
+      </div>
     </div>
   );
 };
