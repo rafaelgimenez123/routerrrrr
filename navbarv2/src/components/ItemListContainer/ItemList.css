@@ -61,3 +61,8 @@
     color: green;
     font-weight: 400;
   }
+  .Item_Detail p {
+ margin: 100px;
+ font-size: larger;
+
+  }

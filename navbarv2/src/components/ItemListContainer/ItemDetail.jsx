@@ -16,6 +16,7 @@ const ItemDetail = ({ item, isLoading }) => {
       <h1>{item.name}</h1>
       <p className="Item_Price">${item.price}</p>
       <p>{item.category}</p>
+      <p>{item.description}</p>
     </div>
   );
 };
